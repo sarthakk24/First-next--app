@@ -1,7 +1,6 @@
-import axios from "axios";
 import type { NextPage } from "next";
 
-interface person {
+export interface person {
   id: number;
   name: string;
   username: string;
@@ -30,7 +29,7 @@ interface Props {
 }
 
 const Home: NextPage<Props> = (props) => {
-  const data: any = props.people.map((el: person) => el.name);
+  const data: string[] = props.people.map((el: person) => el.name);
   return (
     <div>
       <h1>{data}</h1>
@@ -40,7 +39,7 @@ const Home: NextPage<Props> = (props) => {
 
 export async function getStaticProps() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const people = await res.json();
+  const people: person[] = await res.json();
 
   return {
     props: {
