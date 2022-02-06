@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { person } from "../../pages/index";
+import { person } from "../../interface";
 
 const PersonItem = (props: { person: person }): JSX.Element => {
   return (

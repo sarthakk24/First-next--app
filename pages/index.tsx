@@ -1,51 +1,13 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 
-export interface person {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    gro: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-}
-
-interface Props {
-  people: person[];
-}
-
-const Home: NextPage<Props> = (props) => {
-  const data: string[] = props.people.map((el: person) => el.name);
+const Home: NextPage = () => {
   return (
     <div>
-      <h1>{data}</h1>
+      <h1>People Databases</h1>
+      <Link href={"/people"}>Peoples</Link>
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const people: person[] = await res.json();
-
-  return {
-    props: {
-      people,
-    },
-  };
-}
 
 export default Home;

@@ -1,4 +1,4 @@
-import { person } from "../index";
+import { person } from "../../interface";
 import PersonItem from "../../components/People/PersonItem";
 import Link from "next/link";
 

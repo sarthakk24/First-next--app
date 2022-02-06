@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { person } from "../index";
+import { person } from "../../interface";
 
 const Render = (props: { person: person }) => {
   return (
