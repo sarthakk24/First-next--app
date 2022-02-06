@@ -30,7 +30,7 @@ interface Props {
 }
 
 const Home: NextPage<Props> = (props) => {
-  const data: any = props.people.map((el: person) => el.id);
+  const data: any = props.people.map((el: person) => el.name);
   return (
     <div>
       <h1>{data}</h1>
