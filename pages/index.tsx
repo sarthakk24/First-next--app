@@ -25,8 +25,12 @@ interface person {
   };
 }
 
-const Home: NextPage = ({ people }) => {
-  const data: any = people.map((el: person) => el.id);
+interface Props {
+  people: person[];
+}
+
+const Home: NextPage<Props> = (props) => {
+  const data: any = props.people.map((el: person) => el.id);
   return (
     <div>
       <h1>{data}</h1>
