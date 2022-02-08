@@ -1,12 +1,23 @@
+import Head from "next/head";
 import Link from "next/link";
+import Avatar from "react-avatar";
 import { person } from "../../interface";
+import styles from "../../styles/people/peoplePersonal.module.css";
 
 const Render = (props: { person: person }) => {
   return (
     <div>
-      {props.person.name}
-      <Link href={"/people"}>Back</Link>
-      <Link href={"/"}>Home</Link>
+      <Head>
+        <title>{props.person.name}</title>
+      </Head>
+
+      <div>
+        <Link href={"/people"}>Back</Link>
+        <Link href={"/"}>Home</Link>
+      </div>
+      <div className={`${styles.mainContainer}`}>
+        <Avatar name={props.person.name} className={styles.avatar} />
+      </div>
     </div>
   );
 };

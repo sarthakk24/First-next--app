@@ -1,11 +1,16 @@
 import { person } from "../../interface";
 import PersonItem from "../../components/People/PersonItem";
 import Link from "next/link";
+import Head from "next/head";
+import styles from "../../styles/people/people.module.css";
 
 const people = (props: { peoples: person[] }) => {
   return (
     <div>
-      <div>
+      <Head>
+        <title>Everyone</title>
+      </Head>
+      <div className={styles.mainContainer}>
         {props.peoples.map((el: person) => (
           <PersonItem person={el} key={el.id} />
         ))}

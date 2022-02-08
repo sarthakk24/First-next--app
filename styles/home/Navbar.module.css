@@ -1,0 +1,16 @@
+.colourBg {
+  background-color: #000814;
+}
+
+.navbar {
+  font-size: 25px;
+  font-weight: 600;
+  height: 80px;
+}
+
+.navbar ul {
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}

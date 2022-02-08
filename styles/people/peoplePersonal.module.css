@@ -1,0 +1,11 @@
+.mainContainer {
+  background-color: #e5e5e5;
+  margin: 50px;
+  padding: 50px;
+  height: 80vh;
+  border-radius: 50px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
