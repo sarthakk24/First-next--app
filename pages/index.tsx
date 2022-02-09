@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import styles from "../styles/home/Home.module.css";
 import humans from "../components/lottie/background.jpg";
 import Image from "next/image";
+import NavbarItem from "../components/Navbar/NavbarItem";
 
 const Home: NextPage = () => {
   // <div className={styles.contentContainer}>
@@ -22,7 +23,14 @@ const Home: NextPage = () => {
   // </div>
   return (
     <div className={styles.home}>
-      <Navbar />
+      <Navbar>
+        <div>
+          <NavbarItem href="/people" name="People" />
+        </div>
+        <div>
+          <NavbarItem href="/people/1" name="Example" />
+        </div>
+      </Navbar>
       <div>
         <div className={`${styles.imageContainer}`}>
           <Image src={humans} alt="human" />

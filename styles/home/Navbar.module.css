@@ -11,6 +11,18 @@
 .navbar ul {
   height: 100%;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+}
+
+.navbar ul li:last-child {
+  display: flex;
+}
+
+.navbar ul li:last-child div {
+  padding-right: 50px;
+}
+
+.logo {
+  padding-left: 50px;
 }

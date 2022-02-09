@@ -1,7 +1,7 @@
 const PersonData = (props: { label: string; value: string }): JSX.Element => {
   return (
     <div>
-      {props.label}: {props.value}
+      <span style={{ fontWeight: 600 }}>{props.label}</span>: {props.value}
     </div>
   );
 };

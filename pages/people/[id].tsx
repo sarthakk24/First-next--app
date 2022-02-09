@@ -4,6 +4,7 @@ import Avatar from "react-avatar";
 import PersonData from "../../components/People/PersonData";
 import { person } from "../../interface";
 import styles from "../../styles/people/peoplePersonal.module.css";
+import buttonStyles from "../../styles/UI/buttons.module.css";
 
 const Render = (props: { person: person }) => {
   const { id, name, username, email, address, phone, website, company } =
@@ -17,10 +18,6 @@ const Render = (props: { person: person }) => {
         <title>{props.person.name}</title>
       </Head>
 
-      {/* <div>
-        <Link href={"/people"}>Back</Link>
-        <Link href={"/"}>Home</Link>
-      </div> */}
       <div className={`${styles.mainContainer}`}>
         <div className={styles.container}>
           <div className={styles.introContainer}>
@@ -43,6 +40,14 @@ const Render = (props: { person: person }) => {
           <div className={styles.addressContainer}>
             <PersonData label="Address" value={addressFinal} />
             <PersonData label="Phone" value={phone} />
+          </div>
+          <div>
+            <Link href={"/people"}>
+              <a className={buttonStyles.button}>Back</a>
+            </Link>
+            <Link href={"/"}>
+              <a className={buttonStyles.button}>Home</a>
+            </Link>
           </div>
         </div>
       </div>

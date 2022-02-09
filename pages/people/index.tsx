@@ -3,6 +3,8 @@ import PersonItem from "../../components/People/PersonItem";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "../../styles/people/people.module.css";
+import Navbar from "../../components/Navbar/Navbar";
+import NavbarItem from "../../components/Navbar/NavbarItem";
 
 const people = (props: { peoples: person[] }) => {
   return (
@@ -10,6 +12,11 @@ const people = (props: { peoples: person[] }) => {
       <Head>
         <title>Everyone</title>
       </Head>
+      <Navbar>
+        <div>
+          <NavbarItem name="Home" href="/" />
+        </div>
+      </Navbar>
       <div className={styles.mainContainer}>
         {props.peoples.map((el: person) => (
           <PersonItem person={el} key={el.id} />

@@ -2,20 +2,17 @@ import styles from "../../styles/home/Navbar.module.css";
 import NavbarItem from "./NavbarItem";
 import { GiHumanPyramid } from "react-icons/gi";
 
-const Navbar = () => {
+const Navbar = (props: any) => {
   return (
     <div className={`${styles.colourBg} colourWhite ${styles.navbar}`}>
       <ul className="flex">
-        <li>
-          <NavbarItem href="/people" name="People" />
-        </li>
-        <li>
-          <GiHumanPyramid />
+        <li className={styles.logo}>
+          <span>
+            <GiHumanPyramid />
+          </span>
           <NavbarItem href="/" name="Human Database" />
         </li>
-        <li>
-          <NavbarItem href="/people/1" name="Example" />
-        </li>
+        <li>{props.children}</li>
       </ul>
     </div>
   );
